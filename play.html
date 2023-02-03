@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>play</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <!-- <script src="index.js"></script> -->
+    <style>
+        body,section,h2,div,img,button{margin: 0; padding: 0;}
+        body{overflow: hidden;}
+        html,body{ width: 100%; height: 100%;}
+        img{ display: block; }
+        #play_top{
+            /* width: 360px; height: 70px; */
+            width: 100vw; height: 70px;
+            background: #FFF3D2;
+            display: flex; flex-flow:row wrap ;
+            justify-content: space-between;
+            margin: 0 auto;
+            position: relative;
+        }
+        #play_top>h2{
+            width: 115px; height: 30px;
+            font-family: "1UP!",sans-serif;
+            font-size:20px; color: rgba(0, 0, 0, 0.7);
+            margin: 25px 0 0 10px; margin-left: 25px;
+        }
+        #play_top>.score{
+            position: absolute;
+            font-family: "1UP!",sans-serif;
+            font-size:25px; color: rgba(0, 0, 0, 0.7);
+            margin: 20px 0 0 125px;
+        }
+        #play_top>.life{
+            width: 38px; height: 38px;
+            margin: 20px 10px 0 0;
+            margin-right: 25px;
+        }
+        #play_middle{
+            width: 100vw; height: 408px;
+            background: #81bff8;
+            margin: 0 auto;
+        }
+        @keyframes spray_move{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(-45deg);
+            }
+        }
+        .game_zone{
+            width: 295px; height: 336px;
+            position: relative;
+            margin: auto; padding-top: 42px;
+            display: flex; flex-flow: row wrap;
+        }
+        .game_zone>.zone{
+            width: 98px; height: 112px;
+            position: relative;
+        }
+        .game_zone>.zone>div{
+            width: 100%; height: 100%;
+            position: absolute; 
+            left:0; top:0;
+        }
+        .game_zone>.zone>div:not(:first-of-type)>img{
+            position: relative; left:50%; top:50%;
+            transform: translate(-50%, -50%); 
+        }
+        .game_zone>.zone>.spray{
+            width:57px; height:57px;
+            transform: rotate(0deg);
+        }
+        .game_zone>.zone>.spray.spray_click{
+            animation: spray_move 0.2s ease 0s 2 alternate both;
+        }
+        #play_bottom{
+            width: 100vw; height: 165px;
+            background: #fee3ff;
+            margin: 0 auto;
+            display: flex; flex-flow: row wrap;
+            justify-content: space-around;
+        }
+        #play_bottom>.water{
+            width: 135px; height: 45px;
+            border: 5px solid #222; background: #FFF;
+            font-family: "Minecrafter Alt",sans-serif;
+            font-size: 20px; text-align: center; 
+            margin-top: 52px;
+        }
+        #play_bottom>.kill{
+            width: 135px; height: 45px;
+            border: 5px solid #222; background: #FFF;
+            font-family: "Minecrafter Alt",sans-serif;
+            font-size: 20px; text-align: center; 
+            margin-top: 52px;
+        }
+        .scissors.scissors_click{
+            animation: spray_move 0.2s ease 0s 2 alternate both;
+        }
+        .game_zone>.zone>.scissors{
+            width:58px; height:58px;
+            transform: rotate(0deg);
+        }
+        /*게임설명 */
+        .description{
+            width: 360px; height: 640px;
+            margin: 0 auto;
+            margin-top: 50px;
+            display: none;
+            }
+    </style>
+</head>
+<body>
+    <section id="play_top">
+        <h2>SCORE</h2>
+        <p class="score">00</p>
+        <div class="life">
+            <img src="source/heart.png" alt="life">
+            <img src="source/heart.png" alt="life">
+        </div>
+    </section>
+    <section id="play_middle">
+        <div class="game_zone">
+            <div class="zone_1 zone">
+                <div class="soil1"><img src="source/soil.png" alt="soil"></div>
+                <div class="sp1 random_sprout"><img src="source/sprout.png" alt="sprout"></div>
+                <div class="flo1 random_flower"><img src="source/flower.png" alt="flower"></div>
+                <div class="mon1 random_monster"><img src="source/moster.png" alt="monster"></div>
+            </div>
+            <div class="zone_2 zone">
+                <div class="soil2"><img src="source/soil.png" alt="soil"></div>
+                <div class="sp2 random_sprout"><img src="source/sprout.png" alt="sprout"></div>
+                <div class="flo2 random_flower"><img src="source/flower.png" alt="flower"></div>
+                <div class="mon2 random_monster"><img src="source/moster.png" alt="monster"></div>
+            </div>
+            <div class="zone_3 zone">
+                <div class="soil3"><img src="source/soil.png" alt="soil"></div>
+                <div class="sp3 random_sprout"><img src="source/sprout.png" alt="sprout"></div>
+                <div class="flo3 random_flower"><img src="source/flower.png" alt="flower"></div>
+                <div class="mon3 random_monster"><img src="source/moster.png" alt="monster"></div>
+            </div>
+            <div class="zone_4 zone">
+                <div class="soil4"><img src="source/soil.png" alt="soil"></div>
+                <div class="sp4 random_sprout"><img src="source/sprout.png" alt="sprout"></div>
+                <div class="flo4 random_flower"><img src="source/flower.png" alt="flower"></div>
+                <div class="mon4 random_monster"><img src="source/moster.png" alt="monster"></div>
+            </div>
+            <div class="zone_5 zone">
+                <div class="soil5"><img src="source/soil.png" alt="soil"></div>
+                <div class="sp5 random_sprout"><img src="source/sprout.png" alt="sprout"></div>
+                <div class="flo5 random_flower"><img src="source/flower.png" alt="flower"></div>
+                <div class="mon5 random_monster"><img src="source/moster.png" alt="monster"></div>
+            </div>
+            <div class="zone_6 zone">
+                <div class="soil6"><img src="source/soil.png" alt="soil"></div>
+                <div class="sp6 random_sprout"><img src="source/sprout.png" alt="sprout"></div>
+                <div class="flo6 random_flower"><img src="source/flower.png" alt="flower"></div>
+                <div class="mon6 random_monster"><img src="source/moster.png" alt="monster"></div>
+            </div>
+            <div class="zone_7 zone">
+                <div class="soil7"><img src="source/soil.png" alt="soil"></div>
+                <div class="sp7 random_sprout"><img src="source/sprout.png" alt="sprout"></div>
+                <div class="flo7 random_flower"><img src="source/flower.png" alt="flower"></div>
+                <div class="mon7 random_monster"><img src="source/moster.png" alt="monster"></div>
+            </div>
+            <div class="zone_8 zone">
+                <div class="soil8"><img src="source/soil.png" alt="soil"></div>
+                <div class="sp8 random_sprout"><img src="source/sprout.png" alt="sprout"></div>
+                <div class="flo8 random_flower"><img src="source/flower.png" alt="flower"></div>
+                <div class="mon8 random_monster"><img src="source/moster.png" alt="monster"></div>
+            </div>
+            <div class="zone_9 zone">
+                <div class="soil9"><img src="source/soil.png" alt="soil"></div>
+                <div class="sp9 random_sprout"><img src="source/sprout.png" alt="sprout"></div>
+                <div class="flo9 random_flower"><img src="source/flower.png" alt="flower"></div>
+                <div class="mon9 random_monster"><img src="source/moster.png" alt="monster"></div>
+            </div>
+    </div>
+    </section>
+    <section id="play_bottom">
+        <button type="button" class="water">WATER</button>
+        <button type="button" class="kill">KILL</button>
+    </section>
+    <section class="description">
+        <img src="source/game_description.png" alt="description">
+    </section>
+    <script src="play.js"></script>
+</body>
+</html>
