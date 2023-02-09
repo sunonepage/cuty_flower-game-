@@ -1,0 +1,116 @@
+@charset "utf-8";
+@font-face {
+    font-family: "Galmuri11";
+    src: url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+}
+@font-face {
+    font-family: "1UP!";
+    src: url('../font/1up.ttf');
+}
+body,section,h1,button,img{ margin: 0; padding: 0;}
+body{overflow: hidden;}
+html,body{ width: 100%; height: 100%;}
+#wrapper{
+    width: 100vw; height: 100vh; 
+    background: url("../source/intro_bg.jpg")no-repeat center center;
+    background-size:cover;
+    position: relative;
+}
+#wrapper>h1{
+    width: 270px; height: 190px;
+    font-size: 45px; font-family: "1UP!", sans-serif;
+    color:#E7FE02 ; text-align: center; 
+    padding-top: 100px; margin: 0 auto;
+}
+#wrapper>h1>span{
+    font-size: 50px; font-family: "Galmuri11", sans-serif;
+    color: #EBF802;
+}
+#wrapper>.start{
+    display: block;
+    width: 238px; height: 76px;
+    border: 5px solid #222; 
+    font-size: 35px; font-family: "Galmuri11", sans-serif;
+    margin: 90px auto;
+}
+#wrapper>.decoration{
+    height: auto;
+}
+#wrapper>.decoration>.deco1{
+    position: absolute;
+    top: 85px; left: 50%;
+    margin-left:-148px;
+}
+#wrapper>.decoration>.deco2{
+    position: absolute;
+    top: 170px; 
+    left: 50%;
+    margin-left: 95px;
+}
+#wrapper>.decoration>.deco3{
+    position: absolute;
+    top: 260px; left: 50%;
+    margin-left: -140px;
+}
+#wrapper>.decoration>.deco4{
+    position: absolute;
+    top: 295px; left: 50%;
+}
+#wrapper>.decoration>.deco5{
+    position: absolute;
+    top: 470px; left: 50%;
+    margin-left: -120px;
+}
+#wrapper>.decoration>.deco6{
+    position: absolute;
+    top: 455px; left: 50%;
+    margin-left: 60px;
+}
+#intro2{
+    width: 100vw; height: 100vh; 
+    background-color: rgba(208, 68, 68, 0.5); 
+    position: relative; display: none;
+}
+#intro2>h1{
+    width: 270px; height: 190px;
+    font-size: 45px; font-family: "1UP!", sans-serif;
+    color: rgba(129, 4, 4, 0.7); text-align: center; 
+    padding-top: 100px; margin: 0 auto;
+}
+#intro2>h1>span{
+    font-size: 50px; font-family: "Galmuri11", sans-serif;
+    color: rgba(180, 23, 23, 0.65);
+}
+#intro2>.monster{
+    height: auto;
+}
+#intro2>.monster>.mon1{
+    position: absolute;
+    top: 85px; left: 50%;
+    margin-left:-148px;
+}
+#intro2>.monster>.mon2{
+    position: absolute;
+    top: 170px; 
+    left: 50%;
+    margin-left: 95px;
+}
+#intro2>.monster>.mon3{
+    position: absolute;
+    top: 260px; left: 50%;
+    margin-left: -140px;
+}
+#intro2>.monster>.mon4{
+    position: absolute;
+    top: 295px; left: 50%;
+}
+#intro2>.monster>.mon5{
+    position: absolute;
+    top: 470px; left: 50%;
+    margin-left: -120px;
+}
+#intro2>.monster>.mon6{
+    position: absolute;
+    top: 455px; left: 50%;
+    margin-left: 60px;
+}

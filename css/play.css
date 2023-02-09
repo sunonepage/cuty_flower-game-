@@ -1,0 +1,173 @@
+@charset "utf-8";
+@font-face {
+    font-family: "Galmuri11";
+    src: url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+}
+@font-face {
+    font-family: "1UP!";
+    src: url('../font/1up.ttf');
+}
+body,section,h2,div,img,button{margin: 0; padding: 0;}
+body{overflow: hidden;}
+html,body{ width: 100%; height: 100%;}
+img{ display: block; }
+#play_top{
+    /* width: 360px; height: 70px; */
+    width: 100vw; height: 70px;
+    background: #FFF3D2;
+    display: flex; flex-flow:row wrap ;
+    justify-content: space-between;
+    margin: 0 auto;
+    position: relative;
+}
+#play_top>h2{
+    width: 115px; height: 30px;
+    font-family: "1UP!",sans-serif;
+    font-size:20px; color: rgba(0, 0, 0, 0.7);
+    margin: 25px 0 0 10px; margin-left: 25px;
+}
+#play_top>.score{
+    position: absolute;
+    font-family: "1UP!",sans-serif;
+    font-size:25px; color: rgba(0, 0, 0, 0.7);
+    margin: 20px 0 0 125px;
+}
+#play_top>.life{
+    width: 38px; height: 38px;
+    display: flex; flex-direction: row;
+    margin: 20px 10px 0 0;
+    margin-right: 50px;
+}
+#play_middle{
+    width: 100vw; height: 408px;
+    background: #81bff8;
+    margin: 0 auto;
+}
+@keyframes spray_move{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(-45deg);
+    }
+}
+.game_zone{
+    width: 295px; height: 336px;
+    position: relative;
+    margin: auto; padding-top: 42px;
+    display: flex; flex-flow: row wrap;
+}
+.game_zone>.zone{
+    width: 98px; height: 112px;
+    position: relative;
+}
+.game_zone>.zone>div{
+    width: 100%; height: 100%;
+    position: absolute; 
+    left:0; top:0;
+}
+.game_zone>.zone>div:not(:first-of-type)>img{
+    position: relative; left:50%; top:50%;
+    transform: translate(-50%, -50%); 
+}
+.game_zone>.zone>.spray{
+    width:57px; height:57px;
+    transform: rotate(0deg);
+}
+.game_zone>.zone>.spray.spray_click{
+    animation: spray_move 0.2s ease 0s 2 alternate both;
+}
+#play_bottom{
+    width: 100vw; height: 165px;
+    background: #fee3ff;
+    margin: 0 auto;
+    display: flex; flex-flow: row wrap;
+    justify-content: space-around;
+}
+#play_bottom>.water{
+    width: 135px; height: 45px;
+    border: 5px solid #222; background: #FFF;
+    font-family: "Galmuri11", sans-serif;
+    font-size: 20px; text-align: center; 
+    margin-top: 52px;
+}
+#play_bottom>.kill{
+    width: 135px; height: 45px;
+    border: 5px solid #222; background: #FFF;
+    font-family: "Galmuri11", sans-serif;
+    font-size: 20px; text-align: center; 
+    margin-top: 52px;
+}
+.scissors.scissors_click{
+    animation: spray_move 0.2s ease 0s 2 alternate both;
+}
+.game_zone>.zone>.scissors{
+    width:58px; height:58px;
+    transform: rotate(0deg);
+}
+.game_zone>.zone>div:not(:first-of-type){
+    display: none;
+}
+/*게임 오버*/
+#over_bg{
+    position: absolute;
+    top: 0;
+    width: 100vw; height: 100vh;
+    background-color: rgba(250, 80, 80,50%);
+    display: none;
+}
+#over_bg>p{
+    width: 170px; height: 150px;
+    font-family:"Galmuri11", sans-serif;
+    color: #A7D100;
+    font-size: 3.75rem;
+    margin: 215px auto;
+}
+/*게임설명 */
+.description{
+    width: 360px; height: 640px;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: none;
+    }
+/* 게임 엔딩 */
+#end{
+    width: 100vw; height: 100vh;
+    background-color: #81bff8;
+    display: none;
+}
+#end>.end_wrapper{
+    width: 300px; height: 350px;
+    margin: 0 auto;
+    padding-top: 165px;
+    display: flex; flex-direction: column;
+}
+#end>.end_wrapper>.end_top{
+    width: 240px; height: 75px;
+    position: relative;
+    margin: 0 auto;
+}
+#end>.end_wrapper>.end_top>img{
+    width: 50px; height: 50px;
+    position: absolute;
+    top: 0;
+}
+#end>.end_wrapper>.end_top>h2{
+    font-family: '1UP!',sans-serif;
+    color: #ffffff; margin: 0 auto;
+    font-size: 2.813rem;
+    width: 200px; height: 50px;
+    padding-top: 25px;
+}
+#end>.end_wrapper>.score{
+    width: 75px; height: 50px;
+    font-family: '1UP!',sans-serif; color: #ffffff;
+    margin: 50px auto;
+    font-size: 2.813rem;
+}
+#end>.end_wrapper>.again{
+    font-family: '1UP!',sans-serif; color: #ffffff;
+    border: none;
+    font-size: 1.25rem;
+    background-color: transparent;
+}
