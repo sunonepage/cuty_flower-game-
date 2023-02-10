@@ -1,8 +1,5 @@
 @charset "utf-8";
-@font-face {
-    font-family: "Galmuri11";
-    src: url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
-}
+@import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
 @font-face {
     font-family: "1UP!";
     src: url('../font/1up.ttf');
@@ -68,7 +65,7 @@ body{overflow: hidden;}
 #description{
     width: 100vw; height: 640px;
     display: none;
-    background: url('source/description_bg.jpg')repeat;
+    background: url('../source/description_bg.jpg')repeat;
 }
 #description>.description_img{
     width:360px; height: 640px;

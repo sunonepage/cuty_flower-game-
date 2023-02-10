@@ -1,8 +1,5 @@
 @charset "utf-8";
-@font-face {
-    font-family: "Galmuri11";
-    src: url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
-}
+@import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
 @font-face {
     font-family: "1UP!";
     src: url('../font/1up.ttf');

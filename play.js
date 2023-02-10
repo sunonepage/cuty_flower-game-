@@ -21,6 +21,14 @@ $(function(){
             waterBtn=false;
             killBtn=false;
         },4000);
+        setTimeout(function(){
+            if(!zone.eq(first).hasClass('clicked') && !waterBtn){
+                life=0;
+                $('.life>img').eq($('.life>img').length-2).remove();
+                ending();
+                console.log(ending);
+            }
+        },6000)
     }
     function randomZone(){
         let random=Math.floor(Math.random()*9);
